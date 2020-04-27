@@ -1,3 +1,15 @@
+# NAME: 
+# Container with most water
+
+# DESCRIPTION: 
+# Find the container with the highest area from an array of heights (the height is given as an element in the array and the width is the difference between the two indexes of those two heights).
+
+# INPUT: 
+# An array of heights
+
+# OUTPUT: 
+# The max area
+
 heights = [1,3,2,0,5,2,5,4,1,2]
 
 #expected solution 18
@@ -30,5 +42,12 @@ for i, h1 in enumerate(heights):
 
 print('The container with the most water has an area of {} sq units.'.format(max_area))
 print('With height of {} and width of {} (from index {} to index {}).'.format(y,x, indices[0], indices[1]))
+
+print()
+
+# METHOD 2 - - - - -
+print('METHOD 2')
+
+
 
 print()

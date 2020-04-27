@@ -1,6 +1,14 @@
-# Puzzle description: 
-# Find how many pairs have the sum equal to the variable 'sum' in a given
-# list of numbers.
+# NAME: 
+# Sum of pairs
+
+# DESCRIPTION: 
+# Find how many pairs have the sum equal to the variable 'sum' in a given list of numbers.
+
+# INPUT: 
+# An array of numbers and the desired sum
+
+# OUTPUT: 
+# The number of pairs that match the sum when added
 
 numbers = [5, 1, 3, 7, 4, 2, 2, 1, 3, 6, -2]
 sum = 7
