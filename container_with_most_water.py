@@ -12,7 +12,7 @@
 
 heights = [1,3,2,0,5,2,5,4,1,2]
 
-#expected solution 18
+# Expected solution: 18 sq units
 
 # METHOD 1 - - - - -
 print('METHOD 1')

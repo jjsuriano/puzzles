@@ -11,11 +11,11 @@
 # The number of pairs that match the sum when added
 
 numbers = [5, 1, 3, 7, 4, 2, 2, 1, 3, 6, -2]
-sum = 7
+sum = 4
+print()
 
 # METHOD 1 - - - - -
 print('METHOD 1')
-
 pairs = []
 used = []
 
@@ -28,8 +28,7 @@ for i, x in enumerate(numbers):
         # check if we already used those numbers in those indeces to avoid duplicates
         # I used De Morgan's Law three times
         if not(x+y != sum or (i == j or (i in used or j in used))):
-            # add the pair to the pairs array
-            print(x, y)
+            # add the pair to the pairs array and marked them as used
             pairs.append((x, y))
             used.append(i)
             used.append(j)
@@ -41,7 +40,6 @@ print()
 
 # METHOD 2 - - - - -
 print('METHOD 2')
-
 frequency = {}
 counter = 0
 
@@ -62,18 +60,22 @@ for i in frequency:
     find = sum - i
 
     # check if i and find are the same
-    if i == find and frequency[i] == 1:
+    if i == find and frequency[i] <= 1:
         # continue if the frequency is 1 (you need two to make it work)
         continue
     # check if the value is in the dictionary
     # check if the frequency is not 0 for either value (helps avoid duplicates)
     if find in frequency and frequency[find] != 0 and frequency[i] != 0:
-        print(i, find)
+        # count how many appearances the pair i and find occur in the array and get the minimum of appearances
+        appearances = min(frequency[i], frequency[find])
+        # divide by two if i and find are the same
+        if find == i:
+            appearances //= 2
         # add 1 to the counter as a pair has been found
-        counter += 1
+        counter += appearances
         # decrease the frequency by 1 in order to avoid duplicates
-        frequency[find] -= 1
-        frequency[i] -= 1
+        frequency[find] -= appearances
+        frequency[i] -= appearances
 
 print('The number of pairs that have a sum of {} is {}.'.format(sum, counter))
 print()
