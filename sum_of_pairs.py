@@ -4,6 +4,7 @@
 
 numbers = [5, 1, 3, 7, 4, 2, 2, 1, 3, 6, -2]
 sum = 7
+
 # METHOD 1 - - - - -
 print('METHOD 1')
 
