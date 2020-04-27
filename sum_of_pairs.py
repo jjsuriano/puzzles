@@ -3,6 +3,7 @@
 
 # DESCRIPTION: 
 # Find how many pairs have the sum equal to the variable 'sum' in a given list of numbers.
+# No duplicates are allowed (a value can be used only one time)
 
 # INPUT: 
 # An array of numbers and the desired sum
@@ -10,8 +11,8 @@
 # OUTPUT: 
 # The number of pairs that match the sum when added
 
-numbers = [5, 1, 3, 7, 4, 2, 2, 1, 3, 6, -2]
-sum = 4
+numbers = [1, 3, 4, 8, 2, 5]
+sum = 5
 print()
 
 # METHOD 1 - - - - -
@@ -60,7 +61,7 @@ for i in frequency:
     find = sum - i
 
     # check if i and find are the same
-    if i == find and frequency[i] <= 1:
+    if (i == find and frequency[i] <= 1):
         # continue if the frequency is 1 (you need two to make it work)
         continue
     # check if the value is in the dictionary
