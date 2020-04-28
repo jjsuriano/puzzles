@@ -12,42 +12,53 @@
 
 heights = [1,3,2,0,5,2,5,4,1,2]
 
+print()
+
 # Expected solution: 18 sq units
 
 # METHOD 1 - - - - -
 print('METHOD 1')
 
+# LOGIC: 
+# A brute force solution that finds every area possible and determine the max area.
+
 max_area = 0
 
-# loop through the heights array
-for i, h1 in enumerate(heights): 
-    # loop through the heights array again to calculate the max area
-    for j, h2 in enumerate(heights):
-        # ignore if the two values of the iterations are the same
+
+for i in range(0, len(heights)): 
+    for j in range(i+1, len(heights)):
         if i != j:
-            # find the lowest height between the two values as that's the height used to calculate the area
-            lowest = min(h1, h2)
-
-            # calulate the current area with the distance between the indices and the height calculated above
-            current_area = lowest * abs(i-j)
-
-            # if the current area is bigger than the max area, set the max area to the current area
-            if current_area > max_area:
-                max_area = current_area
-
-                #save some information to print the result
-                indices = (i, j)
-                x = abs(i-j)
-                y = lowest
+            lowest = min(heights[i], heights[j])
+            current_area = lowest * (j-i)
+            max_area = max(max_area, current_area)
 
 print('The container with the most water has an area of {} sq units.'.format(max_area))
-print('With height of {} and width of {} (from index {} to index {}).'.format(y,x, indices[0], indices[1]))
-
 print()
 
 # METHOD 2 - - - - -
 print('METHOD 2')
 
+# LOGIC:
+# Use two pointers (one at the start and one at the end of the array), calculate the area of these two pointers,
+# move the pointer with the shortest height closer to the middle until they meet.
 
+max_area = 0
+i = 0
+j = len(heights) - 1
 
+while i < j:    
+    width = j-i
+    left = heights[i]
+    right = heights[j]
+
+    if left <= right: 
+        current_area = left * width
+        i+=1
+    else:
+        current_area = right * width
+        j-=1
+
+    max_area = max(max_area, current_area)
+
+print('The container with the most water has an area of {} sq units.'.format(max_area))
 print()
