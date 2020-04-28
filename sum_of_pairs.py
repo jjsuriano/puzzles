@@ -30,7 +30,7 @@ for i in range(0, len(numbers)):
     for j in range(i+1, len(numbers)): 
         x = numbers[i]
         y = numbers[j]
-        # I used De Morgan's Law three times
+        # I used De Morgan's Law
         if x+y == sum and not(i in used or j in used):
             pairs.append((x, y))
             used.append(i)
