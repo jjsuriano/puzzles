@@ -56,6 +56,8 @@ print('METHOD 2')
 # LOGIC:
 # A solution that uses two pointers (one in str1 and the other one in str2) and loops through the strings to determine if str2 is a subsequence
 
+# This solution is better because even though it has the same time complexity it has a better space complexity as no extra structures are needed
+
 def subsequence_2(str1, str2):
 
     i = 0
