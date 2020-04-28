@@ -24,7 +24,6 @@ print('METHOD 1')
 
 max_area = 0
 
-
 for i in range(0, len(heights)): 
     for j in range(i+1, len(heights)):
         if i != j:
