@@ -6,7 +6,7 @@
 # No duplicates are allowed (a value can be used only one time)
 
 # INPUT: 
-# An array of numbers and the desired sum
+# An array of numbers (numbers) and the desired sum (sum)
 
 # OUTPUT: 
 # The number of pairs that match the sum when added
@@ -44,7 +44,8 @@ print()
 print('METHOD 2')
 
 # LOGIC:
-# 
+# This solution finds the number of times a number appears in the input list. Using that frequency table,
+# find the matching pairs that add up to 'sum'.
 
 frequency = {}
 counter = 0

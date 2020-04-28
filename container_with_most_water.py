@@ -5,7 +5,7 @@
 # Find the container with the highest area from an array of heights (the height is given as an element in the array and the width is the difference between the two indexes of those two heights).
 
 # INPUT: 
-# An array of heights
+# An array of heights (heights)
 
 # OUTPUT: 
 # The max area

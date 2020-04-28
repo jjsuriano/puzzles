@@ -30,7 +30,7 @@ print('METHOD 1')
 
 def subsequence_1(str1, str2):
 
-    positions = {c:i for i, c in enumerate(str1)}
+    positions = { c:i for i, c in enumerate(str1) }
     last_index = -1
 
     for c in str2:
