@@ -2,7 +2,9 @@
 # Plus one
 
 # DESCRIPTION: 
-# 
+# The input is a non-empty array that represents the digits of a positive integer, 
+# and the purpose is to return a non-empty array with the digits that represent the same
+# positive integer plus one.
 
 # EXAMPLE:
 # input: [1,2,3], output: [1,2,4]
