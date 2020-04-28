@@ -2,7 +2,9 @@
 # Container with most water
 
 # DESCRIPTION: 
-# Find the container with the highest area from an array of heights (the height is given as an element in the array and the width is the difference between the two indexes of those two heights).
+# Find the container with the highest area from an array of heights (the height 
+# is given as an element in the array and the width is the difference between 
+# the two indexes of those two heights).
 
 # INPUT: 
 # An array of heights (heights)
@@ -20,7 +22,8 @@ print()
 print('METHOD 1')
 
 # LOGIC: 
-# A brute force solution that finds every area possible and determine the max area.
+# A brute force solution that finds every area possible and determine the max 
+# area.
 
 max_area = 0
 
@@ -38,8 +41,9 @@ print()
 print('METHOD 2')
 
 # LOGIC:
-# Use two pointers (one at the start and one at the end of the array), calculate the area of these two pointers,
-# move the pointer with the shortest height closer to the middle until they meet.
+# Use two pointers (one at the start and one at the end of the array), calculate
+# the area of these two pointers, move the pointer with the shortest height 
+# closer to the middle until they meet.
 
 max_area = 0
 i = 0

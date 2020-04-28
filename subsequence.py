@@ -3,8 +3,9 @@
 
 # DESCRIPTION: 
 # Determine if str2 is a subsequence of str1.
-# A subsequence means that a string is formed by deleting some characters (or none) without distubing
-# the positions of the characaters in the original string.
+# A subsequence means that a string is formed by deleting some characters (or 
+# none) without distubing the positions of the characaters in the original 
+# string.
 
 # EXAMPLE:
 # 'cod' and 'coin' are subsequences of 'coding'
@@ -26,7 +27,8 @@ print()
 print('METHOD 1')
 
 # LOGIC: 
-# A solution that uses a dictionary to store the positions of each letter in str1, then use that dictionary to determine if str2 is a subsequence
+# A solution that uses a dictionary to store the positions of each letter in 
+# str1, then use that dictionary to determine if str2 is a subsequence.
 
 def subsequence_1(str1, str2):
 
@@ -54,9 +56,8 @@ print()
 print('METHOD 2')
 
 # LOGIC:
-# A solution that uses two pointers (one in str1 and the other one in str2) and loops through the strings to determine if str2 is a subsequence
-
-# This solution is better because even though it has the same time complexity it has a better space complexity as no extra structures are needed
+# A solution that uses two pointers (one in str1 and the other one in str2) and 
+# loops through the strings to determine if str2 is a subsequence.
 
 def subsequence_2(str1, str2):
 

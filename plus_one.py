@@ -2,16 +2,17 @@
 # Plus one
 
 # DESCRIPTION: 
-# The input is a non-empty array that represents the digits of a positive integer, 
-# and the purpose is to return a non-empty array with the digits that represent the same
-# positive integer plus one.
+# The input is a non-empty array that represents the digits of a positive 
+# integer, and the purpose is to return a non-empty array with the digits that 
+# represent the same positive integer plus one.
 
 # EXAMPLE:
 # input: [1,2,3], output: [1,2,4]
 
 
 # INPUT: 
-# A non-empty array of integers that represent the digits of a non positive integer (num)
+# A non-empty array of integers that represent the digits of a non positive 
+# integer (num)
 
 
 # OUTPUT: 
@@ -25,10 +26,10 @@ print()
 print('METHOD 1')
 
 # LOGIC: 
-# The last value in the array will be added 1 and the other elements will be added
-# the carry over from the last addition. The carry over value is 1 if the previous number
-# resulted a 10. If at the end of the loop the carry is 1, insert a 1 at the beginning
-# of the array.
+# The last value in the array will be added 1 and the other elements will be 
+# added the carry over from the last addition. The carry over value is 1 if the
+# previous number resulted a 10. If at the end of the loop the carry is 1, 
+# insert a 1 at the beginning of the array.
 
 print('{} + 1 is equal to: '.format(num))
 

@@ -2,8 +2,8 @@
 # Sum of pairs
 
 # DESCRIPTION: 
-# Find how many pairs have the sum equal to the variable 'sum' in a given list of numbers.
-# No duplicates are allowed (a value can be used only one time)
+# Find how many pairs have the sum equal to the variable 'sum' in a given list 
+# of numbers. No duplicates are allowed (a value can be used only one time).
 
 # INPUT: 
 # An array of numbers (numbers) and the desired sum (sum)
@@ -20,8 +20,8 @@ print()
 print('METHOD 1')
 
 # LOGIC: 
-# A brute force solution that adds up an element with another element to see if they match
-# the desired sum. 
+# A brute force solution that adds up an element with another element to see if 
+# they match the desired sum. 
 
 pairs = []
 used = []
@@ -44,8 +44,8 @@ print()
 print('METHOD 2')
 
 # LOGIC:
-# This solution finds the number of times a number appears in the input list. Using that frequency table,
-# find the matching pairs that add up to 'sum'.
+# This solution finds the number of times a number appears in the input list. 
+# Using that frequency table, find the matching pairs that add up to 'sum'.
 
 frequency = {}
 counter = 0
