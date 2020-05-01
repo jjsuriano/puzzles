@@ -65,12 +65,18 @@ def placeQueen(N, grid, r):
             if r == N-1:
                 print(grid)
                 print()
+                user_input = input('Continue? [Y/N] ')
+                print()
+                if user_input.upper() != 'Y':
+                    return
+
             #print('POP:  {}, {}\n'.format(r, i))
             grid[r][i] = 0
             
 def solve(N):
     grid = np.zeros((N,N))
     placeQueen(N, grid, 0)
+    print('End.')
 
 print()
-solve(4)
+solve(5)
