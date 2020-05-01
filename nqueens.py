@@ -1,12 +1,29 @@
+# NAME: 
+# N-Queens
+
+# DESCRIPTION: 
+# Given a number N, place N chess queens in an NxN grid so that no queens are 
+# attacking each other. 
+
+# EXAMPLE:
+# n = 1 -> [[1]]
+
+# INPUT: 
+# N, the number of queens and the size of the grid
+
+# OUTPUT: 
+# The solutions where the queens can be placed
+
 import numpy as np
+
+# Function to understand the idea of rows, columns
+# and diagonals of a specific coordinate in a matrix
+# NOTE: this function is not used in the solution just its logic
 
 X = 4
 
 starting_grid = np.zeros((X, X))
 
-# Function to understand the idea of rows, columns
-# and diagonals of a specific coordinate in a matrix
-# NOTE: this function is not used in the solution
 def queenAttackingDirections(grid, r, c):
     for i in range(X):
         # ROW ----------
@@ -32,7 +49,12 @@ def queenAttackingDirections(grid, r, c):
     return grid
 #print(queenAttackingDirections(starting_grid, X//2, X//2))
 
-# N QUEENS SOLUTION
+# METHOD 1 - - - - -
+print('METHOD 1')
+
+# LOGIC: 
+# A solution that uses recursion and backtracking. 
+
 def isValid(N, grid, r, c):
     for i in range(N):
         # check for same row and column
