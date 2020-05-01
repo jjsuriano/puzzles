@@ -5,7 +5,7 @@ X = 4
 starting_grid = np.zeros((X, X))
 
 # Function to understand the idea of rows, columns
-# and diagonals in a matrix
+# and diagonals of a specific coordinate in a matrix
 # NOTE: this function is not used in the solution
 def queenAttackingDirections(grid, r, c):
     for i in range(X):
@@ -35,9 +35,11 @@ def queenAttackingDirections(grid, r, c):
 # N QUEENS SOLUTION
 def isValid(N, grid, r, c):
     for i in range(N):
+        # check for same row and column
         if grid[i][c] == 1 or grid[r][i] == 1:
             return False
         
+        # check the diagonals
         diff = abs(r-i)
 
         left_diagonal = c - diff
@@ -52,7 +54,7 @@ def isValid(N, grid, r, c):
     return True
 
 def placeQueen(N, grid, r):
-    # Missing collecting the different solutions
+    # base case - return after checking the last row
     if r == N: return
     for i in range(N):
         #print('test: {}, {}'.format(r, i))
@@ -71,4 +73,4 @@ def solve(N):
     placeQueen(N, grid, 0)
 
 print()
-solve(1)
+solve(4)
