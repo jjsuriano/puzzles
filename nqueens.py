@@ -35,19 +35,47 @@ def queenAttackingDirections(grid, r, c):
 # N QUEENS SOLUTION
 def isValid(N, grid, r, c):
     for i in range(N):
-        if grid[i][c] == 1:
+        if grid[i][c] == 1 or grid[r][i] == 1:
             return False
+        
+        diff = abs(r-i)
+
+        left_diagonal = c - diff
+        right_diagonal = c + diff
+
+        if left_diagonal in range(N):
+            if grid[i][left_diagonal] == 1:
+                return False
+        if right_diagonal in range(N):
+            if grid[i][right_diagonal] == 1:
+                return False
     return True
 
-def placeQueen(N, grid, r):
+def placeQueen(N, grid, r, s):
+    # Missing collecting the different solutions
+    if r == N: return False
     for i in range(N):
+        print('test: {}, {}'.format(r, i))
         if isValid(N, grid, r, i):
             grid[r][i] = 1
-            placeQueen(N, grid, r+1)
+            print('push: {}, {}\n'.format(r, i))
+            #print(grid)
+            #print()
+            placeQueen(N, grid, r+1, s)
+            print('pop: {}, {}\n'.format(r, i))
+            if r == N-1:
+                print('HERE!')
+                s += 1
+                print(grid)
+            grid[r][i] = 0
 
 def solve(N):
     grid = np.zeros((N,N))
-    placeQueen(N, grid, 0)
-    return grid
+    solutions = 0
+    if placeQueen(N, grid, 0, solutions):
+        print('I found a solution!')
+    else: 
+        print('I did not find a solution!')
+    return solutions
 
 print(solve(4))
