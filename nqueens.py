@@ -51,31 +51,24 @@ def isValid(N, grid, r, c):
                 return False
     return True
 
-def placeQueen(N, grid, r, s):
+def placeQueen(N, grid, r):
     # Missing collecting the different solutions
-    if r == N: return False
+    if r == N: return
     for i in range(N):
-        print('test: {}, {}'.format(r, i))
+        #print('test: {}, {}'.format(r, i))
         if isValid(N, grid, r, i):
             grid[r][i] = 1
-            print('push: {}, {}\n'.format(r, i))
-            #print(grid)
-            #print()
-            placeQueen(N, grid, r+1, s)
-            print('pop: {}, {}\n'.format(r, i))
+            #print('PUSH: {}, {}\n'.format(r, i))
+            placeQueen(N, grid, r+1)
             if r == N-1:
-                print('HERE!')
-                s += 1
                 print(grid)
+                print()
+            #print('POP:  {}, {}\n'.format(r, i))
             grid[r][i] = 0
-
+            
 def solve(N):
     grid = np.zeros((N,N))
-    solutions = 0
-    if placeQueen(N, grid, 0, solutions):
-        print('I found a solution!')
-    else: 
-        print('I did not find a solution!')
-    return solutions
+    placeQueen(N, grid, 0)
 
-print(solve(4))
+print()
+solve(1)
