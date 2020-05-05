@@ -15,7 +15,7 @@
 # OUTPUT: 
 # A list with all the possible combinations of well-formed parentheses
 
-n = 2
+n = 3
 print()
 
 # METHOD 1 - - - - -
@@ -46,4 +46,3 @@ def matching_parentheses(opening, closing, current, combinations=None):
 
 print(matching_parentheses(n, n, ''))
 print()
-
