@@ -32,6 +32,7 @@ print()
 
 # METHOD 2 - - - - -
 print('METHOD 2')
+
 # LOGIC: 
 # Using the idea of two pointers and swapping them until they meet in the middle
 # This method uses a list to swap the charaters
@@ -52,6 +53,7 @@ print()
 
 # METHOD 3 - - - - -
 print('METHOD 3')
+
 # LOGIC: 
 # Using the idea of two pointers and swapping them until they meet in the middle
 # This method uses string slicing and concatenation to swap characters
