@@ -11,7 +11,7 @@
 # OUTPUT: 
 # A boolean that states if it is a valid pattern of parentheses
 
-input_str = "}"
+input_str = "(([]){})"
 print()
 
 # METHOD 1 - - - - -
