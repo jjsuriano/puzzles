@@ -41,7 +41,7 @@ def matching_parentheses(opening, closing, current, combinations=None):
     while closing > 0:
         closing -= 1
         current += ')'
-        matching_parentheses(opening, closing, current, combinations)
+        #matching_parentheses(opening, closing, current, combinations)
     return combinations
 
 print(matching_parentheses(n, n, ''))
