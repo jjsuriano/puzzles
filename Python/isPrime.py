@@ -25,6 +25,14 @@ print('METHOD 1')
 # A prime number has only two factors 1 and itself. Loop through smaller numbers
 # than num and check if num is divisible by any of those.
 
+# To improve the efficiency of the function I:
+# - returned false immediately if num is even or 1
+# - looped only through odd numbers
+# - looped until num//i is greater than 1 because we are never going to reach 1 in
+#   num//i because the only result that gives us 1 is num/num and the loop ends in
+#   the odd number before num. Once the quotient reaches 1, there is no point in 
+#   running the loop.
+
 def isPrime(x):
     if x%2 == 0 or x == 1:
         return False
