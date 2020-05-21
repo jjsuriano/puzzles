@@ -20,13 +20,12 @@ func isPrime(x int) bool {
 		Loop through the odd numbers from 3 to x and check if x is divisible by
 		any of those odd numbers and if it is return false.
 	*/
-	for i := 3; i < x; i += 2 {
-                if x/i == 1 { 
-                        return true
-                }
+	i := 3
+	for x/i > 1 {
 		if x%i == 0 && x != i {
 			return false
 		}
+		i += 2
 	}
 
 	return true
@@ -34,7 +33,7 @@ func isPrime(x int) bool {
 
 func main() {
 
-	fmt.Print("\nEnter a number: ")
+	fmt.Print("Enter a number: ")
 	var x int
 	_, err := fmt.Scanf("%d", &x)
 
@@ -47,5 +46,4 @@ func main() {
 	} else {
 		fmt.Println("The number you entered is a NOT prime number!")
 	}
-	fmt.Println()
 }
