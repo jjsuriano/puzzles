@@ -20,7 +20,10 @@ func isPrime(x int) bool {
 		Loop through the odd numbers from 3 to x and check if x is divisible by
 		any of those odd numbers and if it is return false.
 	*/
-	for i := 3; i <= x; i += 2 {
+	for i := 3; i < x; i += 2 {
+                if x/i == 1 { 
+                        return true
+                }
 		if x%i == 0 && x != i {
 			return false
 		}
