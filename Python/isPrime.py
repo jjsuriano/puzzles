@@ -38,8 +38,6 @@ def isPrime(x):
         return False
     
     i = 3
-    counter = 1
-
     while x//i > 1:
         if x%i == 0 and x != i:
             return False
