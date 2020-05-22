@@ -9,9 +9,14 @@ func isPrime(x int) bool {
 
 	/*
 		Base cases:
+		- return true if x is 2
 		- return false if x is even
 		- return false if x is 1
 	*/
+	if x == 2 {
+		return true
+	}
+
 	if x%2 == 0 || x == 1 {
 		return false
 	}
