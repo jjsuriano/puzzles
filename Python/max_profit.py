@@ -20,7 +20,7 @@ print('METHOD 1')
 # LOGIC: 
 # Loop the list and keep updating the max profit
 
-buy_price = 99999999
+buy_price = float("inf")
 max_profit = 0
 
 for i in prices:
