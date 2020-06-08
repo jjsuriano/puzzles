@@ -10,39 +10,75 @@
 # OUTPUT: 
 # 9x9 grid with the solution
 
-import numpy as np
+grid = [[1, 0, 0, 5, 0, 0, 0, 4, 3], 
+        [4, 7, 0, 1, 0, 2, 0, 5, 0], 
+        [0, 0, 0, 0, 0, 0, 2, 9, 1], 
+        [9, 0, 3, 4, 0, 0, 5, 8, 6],
+        [6, 0, 0, 0, 0, 5, 0, 2, 0],
+        [0, 5, 0, 0, 0, 0, 1, 7, 0], 
+        [3, 0, 5, 8, 0, 0, 9, 6, 2], 
+        [0, 2, 6, 3, 0, 9, 8, 0, 5],
+        [8, 0, 0, 0, 5, 0, 0, 0, 0]] 
 
-grid = np.array(
-    [[1, 0, 0, 5, 0, 0, 0, 4, 3], 
-     [4, 7, 0, 1, 0, 2, 0, 5, 0], 
-     [0, 0, 0, 0, 0, 0, 2, 9, 1], 
-     [9, 0, 3, 4, 0, 0, 5, 8, 6],
-     [6, 0, 0, 0, 0, 5, 0, 2, 0],
-     [0, 5, 0, 0, 0, 0, 1, 7, 0], 
-     [3, 0, 5, 8, 0, 0, 9, 6, 2], 
-     [0, 2, 6, 3, 0, 9, 8, 0, 5],
-     [8, 0, 0, 0, 5, 0, 0, 0, 0]
-     ] 
-)
-
-# helper function if number placement is valid
-def isValid(value, r, c, grid):
-    # check the row and the column the value is in
-    for i in range(9):
-        if value == grid[r][i] or value == grid[i][c]:
-            return False
+class Sudoku:
+    def __init__(self, board):
+        self.board = board
+        self.SIZE = 9
     
-    # check in the 3x3 grid the value is in
-    r = (r//3)*3 # calculate the row index of the top left corner of that 3x3 grid
-    c = (c//3)*3 # calculate the column index of the top left corner of that 3x3 grid
-
-    # 0,0    0,3    0,6
-    # 3,0    3,3    3,6
-    # 6,0    6,3    6,6
-
-    for i in range(3):
-        for j in range(3):
-            if value == grid[r+i][c+j]:
+    def _isValid(self, value:int, row:int, col:int) -> bool:
+        for i in range(self.SIZE):
+            if value == self.board[row][i] or value == self.board[i][col]:
                 return False
         
-    return True
+        row = (row // 3) * 3
+        col = (col // 3) * 3 
+
+        for i in range(3):
+            for j in range(3):
+                if value == self.board[row + j][col + i]:
+                    return False
+        return True
+    
+    def newBoard(self, board):
+        self.board = board
+
+    def solve(self):
+        nextEmpty = self._getNextEmpty()
+        if not nextEmpty:
+            return True
+        row, col = nextEmpty
+
+        for num in range(1, self.SIZE+1):
+            if self._isValid(num, row, col):
+                self.board[row][col] = num
+                if self.solve():
+                    return True
+                self.board[row][col] = 0
+        return False
+             
+    def _getNextEmpty(self):
+        for row in range(self.SIZE):
+            for col in range(self.SIZE):
+                if self.board[row][col] == 0:
+                    return (row, col)
+        return None
+
+    def display(self):
+        print()
+        for row in range(self.SIZE):
+            if row % 3 == 0 and row != 0:
+                    print("- - - + - - - + - - -")
+            for col in range(self.SIZE):
+                if col % 3 == 0 and col != 0:
+                    print("| ", end="")
+            
+                if col == self.SIZE-1:
+                    print(self.board[row][col])
+                else: 
+                    print(self.board[row][col], end=" ")
+        print()
+
+s = Sudoku(grid)
+s.display()
+s.solve()
+s.display()
