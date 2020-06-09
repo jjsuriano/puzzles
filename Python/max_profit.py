@@ -1,9 +1,10 @@
 # DESCRIPTION:
 # Given a list of a stock's price in the ith day, calculate the max profit if
-# you can only buy one stock and sell one stock. 
+# you can buy one stock and sell one stock as many times you want, but you have
+# to buy and sell one stock at time.
 
 # EXAMPLE:
-# [7,1,5,3,6,4] -> 5
+# [10, 22, 5, 75, 65, 80] -> 97
 
 # INPUT: 
 # A list of prices in the ith day
@@ -11,21 +12,20 @@
 # OUTPUT: 
 # The max profit from buying and selling the stock
 
-prices = [7,1,5,3,6,4]
+prices = [10, 22, 10, 5, 45, 78, 65, 80]
 print()
 
 # METHOD 1 - - - - -
 print('METHOD 1')
 
 # LOGIC: 
-# Loop the list and keep updating the max profit
+# Add the profit if the price increases, if the price decreases do nothing
 
-buy_price = float("inf")
-max_profit = 0
+maxProfit = 0
 
-for i in prices:
-    buy_price = min(buy_price, i)
-    max_profit = max(max_profit, i-buy_price)
-
-print('The max profit you can do is: ${}.'.format(max_profit))
+for i in range(1, len(prices)):
+    if prices[i-1] < prices[i]:
+        maxProfit += prices[i] - prices[i-1]
+    
+print(f"The max profit you can make is: ${maxProfit}")
 print()
