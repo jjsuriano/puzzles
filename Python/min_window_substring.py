@@ -10,6 +10,9 @@
 # OUTPUT: 
 # The minimum window in S that contains all the characters in T and the length of the minimum window
 
+s = "ADOBECODEBANCM"
+print()
+
 # METHOD 1 - - - - -
 print('METHOD 1')
 
@@ -42,25 +45,33 @@ def minWindowSubstring(s, t):
           result = window
   return (result, len(result))
 
-s = "ADOBECODEBANCM"
 t = "ABC"
-print(s, t)
+print("s is " + s, "and t is", t)
 print(minWindowSubstring(s, t))
 
 print()
 
 t = "SD"
-print(s, t)
+print("s is " + s, "and t is", t)
 print(minWindowSubstring(s, t))
 
 print()
 
 t = "ONE"
-print(s, t)
+print("s is " + s, "and t is", t)
+print(minWindowSubstring(s, t))
+print()
+
+s = "AA"
+t = "AA"
+print("s is " + s, "and t is", t)
 print(minWindowSubstring(s, t))
 
+s = "ADOBECODEBANCM"
+print()
+
 # METHOD 2 - - - - -
-print('\nMETHOD 2')
+print('METHOD 2')
 
 # LOGIC: 
 # Use the sliding window technique to traverse s only once (dynamic window)
@@ -72,15 +83,16 @@ def minWindowSubstring(s, t):
   if size_s < size_t:
     return ("", 0)
 
-  from collections import defaultdict
+  from collections import defaultdict, Counter
 
   left, right = 0, 0
+  char_set = Counter(t)
   window = defaultdict(int)
   result = ""
 
   def checker():
-    for i in t:
-      if not window[i]:
+    for i, v in char_set.items():
+      if window[i] < v:
         return False
     return True
 
@@ -88,8 +100,8 @@ def minWindowSubstring(s, t):
     current_char = s[right]
     window[current_char] += 1
     right += 1
-
     while checker():
+      
       if not result or len(result) > right-left:
         result = s[left:right]
       window[s[left]] -= 1
@@ -97,19 +109,25 @@ def minWindowSubstring(s, t):
 
   return (result, len(result))
 
-s = "ADOBECODEBANCM"
 t = "ABC"
-print(s, t)
+print("s is " + s, "and t is", t)
 print(minWindowSubstring(s, t))
 
 print()
 
 t = "SD"
-print(s, t)
+print("s is " + s, "and t is", t)
 print(minWindowSubstring(s, t))
 
 print()
 
 t = "ONE"
-print(s, t)
+print("s is " + s, "and t is", t)
+print(minWindowSubstring(s, t))
+
+print()
+
+s = "AAB"
+t = "AA"
+print("s is " + s, "and t is", t)
 print(minWindowSubstring(s, t))
