@@ -1,6 +1,3 @@
-# NAME: 
-# Sudoku Solver
-
 # DESCRIPTION: 
 # Find the solution for the given sudoku grid
 

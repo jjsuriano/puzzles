@@ -1,6 +1,3 @@
-# NAME: 
-# Rooks are Safe
-
 # DESCRIPTION: 
 # Given a n by n grid with 1s representing rooks positions, determine if they are
 # safe or not where they are located. 

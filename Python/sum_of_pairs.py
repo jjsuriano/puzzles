@@ -1,6 +1,3 @@
-# NAME: 
-# Sum of pairs
-
 # DESCRIPTION: 
 # Find how many pairs have the sum equal to the variable 'sum' in a given list 
 # of numbers. No duplicates are allowed (a value can be used only one time).

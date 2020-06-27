@@ -1,6 +1,3 @@
-# NAME: 
-# Is Prime
-
 # DESCRIPTION:
 # Given an int, check if the input is a prime number or not.
 

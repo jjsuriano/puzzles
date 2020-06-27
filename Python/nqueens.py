@@ -1,6 +1,3 @@
-# NAME: 
-# N-Queens
-
 # DESCRIPTION: 
 # Given a number N, place N chess queens in an NxN grid so that no queens are 
 # attacking each other. 

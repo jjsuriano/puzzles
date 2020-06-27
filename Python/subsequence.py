@@ -1,6 +1,3 @@
-# NAME: 
-# Subsequence
-
 # DESCRIPTION: 
 # Determine if str2 is a subsequence of str1.
 # A subsequence means that a string is formed by deleting some characters (or 

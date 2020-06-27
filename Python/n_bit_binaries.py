@@ -1,6 +1,3 @@
-# NAME: 
-# N Bit Binaries
-
 # DESCRIPTION: 
 # Given a number N, print all the binary combinations with N bit.
 

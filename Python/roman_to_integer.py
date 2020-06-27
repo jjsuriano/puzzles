@@ -1,6 +1,3 @@
-# NAME: 
-# Roman to integer
-
 # DESCRIPTION: 
 # Take a string with a Roman numeral and return the integer that corresponds to
 # that Roman numeral.
