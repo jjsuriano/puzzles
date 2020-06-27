@@ -16,43 +16,44 @@
 
 nums = [0,0,0,0]
 nums1 = [-1,0,1,2,-1,-4]
+nums2 = [-1,0,1,2,-1,-4,-1,-1,-1,-1]
 print()
 
 # METHOD 1 - - - - -
 print('METHOD 1')
 
 # LOGIC: Loop through the list and using the current num and using the
-# twoSum technique in the rest fo the list (two pointers technique)
+# twoSum technique in the rest of the list (two pointers technique)
 
 def threeSum(nums):
     size = len(nums)
-    K = 3
+    if size < 3:
+        return []
 
-    if size < K:
-        return list()
-
-    result = []
+    results = []
     nums = sorted(nums)
-    current = []
 
-    for i in range(size - K + 1):
-        if not i or (nums[i] > nums[i-1]):
+    for i in range(size - 2):
+        if not i or nums[i] != nums[i - 1]:
             target = 0 - nums[i]
-            low = i + 1
-            high = size - 1
-            while low < high:
-                twoSum = nums[low] + nums[high]
-                if twoSum == target:
-                    result.append([nums[i], nums[low], nums[high]])
-                    while low < high and nums[low] == nums[low+1]: low += 1
-                    while low < high and nums[high] == nums[high-1]: high -= 1
-                    low += 1
-                    high -= 1
-                elif twoSum > target:
-                    high -= 1
+            left = i + 1
+            right = size - 1
+
+            while left < right:
+                two_sum = nums[left] + nums[right]
+                if two_sum < target:
+                    left += 1
+                elif two_sum > target:
+                    right -= 1
                 else:
-                    low += 1
-    return result
+                    results.append([nums[i], nums[left], nums[right]])
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+                    left += 1
+                    right -= 1
+    return results
 
 print("Input:", nums)
 print(threeSum(nums))
@@ -60,4 +61,8 @@ print()
 
 print("Input:", nums1)
 print(threeSum(nums1))
+print()
+
+print("Input:", nums2)
+print(threeSum(nums2))
 print()
