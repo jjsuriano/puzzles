@@ -11,6 +11,8 @@
 # OUTPUT:
 # The longest array with only 1s
 
+print()
+
 # METHOD 1 - - - - -
 print('METHOD 1')
 
@@ -35,16 +37,14 @@ def longestOnes(nums, K):
     while right < size:
         if not nums[right]:
             counter += 1
-        window += nums[right]
         right += 1
 
         while counter > K:
             if not nums[left]:
                 counter -= 1
-            window -= nums[left]
             left += 1
 
-        result = max(result, window + counter)
+        result = max(result, right - left)
     return result
 
 A = [1,1,1,0,0,0,1,1,1,1,0] #6
