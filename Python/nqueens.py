@@ -1,14 +1,14 @@
-# DESCRIPTION: 
-# Given a number N, place N chess queens in an NxN grid so that no queens are 
-# attacking each other. 
+# DESCRIPTION:
+# Given a number N, place N chess queens in an NxN grid so that no queens are
+# attacking each other.
 
 # EXAMPLE:
 # n = 1 -> [[1]]
 
-# INPUT: 
+# INPUT:
 # N, the number of queens and the size of the grid
 
-# OUTPUT: 
+# OUTPUT:
 # The solutions where the queens can be placed
 
 import numpy as np
@@ -25,10 +25,10 @@ def queenAttackingDirections(grid, r, c):
     for i in range(X):
         # ROW ----------
         grid[r][i] = 1
-        
+
         # COLUMN -------
         grid[i][c] = 1
-        
+
         # DIAGONALS ----
         # Diagonals have the same row and column distance
         # j is the row distance
@@ -39,7 +39,7 @@ def queenAttackingDirections(grid, r, c):
 
         if c+j < X:
             grid[i][c+j] = 1
-        
+
         if c-j >= 0:
             grid[i][c-j] = 1
 
@@ -49,15 +49,15 @@ def queenAttackingDirections(grid, r, c):
 # METHOD 1 - - - - -
 print('METHOD 1')
 
-# LOGIC: 
-# A solution that uses recursion and backtracking. 
+# LOGIC:
+# A solution that uses recursion and backtracking.
 
 def isValid(N, grid, r, c):
     for i in range(N):
         # check for same row and column
         if grid[i][c] == 1 or grid[r][i] == 1:
             return False
-        
+
         # check the diagonals
         diff = abs(r-i)
 
@@ -88,10 +88,9 @@ def placeQueen(N, grid, r):
                 print()
                 if user_input.upper() != 'Y':
                     return
-
             #print('POP:  {}, {}\n'.format(r, i))
             grid[r][i] = 0
-            
+
 def solve(N):
     grid = np.zeros((N,N))
     placeQueen(N, grid, 0)

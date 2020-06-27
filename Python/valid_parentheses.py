@@ -1,14 +1,14 @@
 # DESCRIPTION:
-# Given a string with different parentheses characters, determine if it is 
+# Given a string with different parentheses characters, determine if it is
 # valid.
 
 # EXAMPLE:
 # "()[]{}" -> True
 
-# INPUT: 
+# INPUT:
 # A string with a set of parentheses
 
-# OUTPUT: 
+# OUTPUT:
 # A boolean that states if it is a valid pattern of parentheses
 
 input_str = "(([]){})"
@@ -17,7 +17,7 @@ print()
 # METHOD 1 - - - - -
 print('METHOD 1')
 
-# LOGIC: 
+# LOGIC:
 # This method uses a stack to keep track of the opening character and match the
 # last in the stack with a closing character
 

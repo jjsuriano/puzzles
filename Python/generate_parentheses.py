@@ -9,10 +9,10 @@
 #       "()(())",
 #       "()()()"]
 
-# INPUT: 
-# An int 
+# INPUT:
+# An int
 
-# OUTPUT: 
+# OUTPUT:
 # A list with all the possible combinations of well-formed parentheses
 
 n = 3
@@ -21,7 +21,7 @@ print()
 # METHOD 1 - - - - -
 print('METHOD 1')
 
-# LOGIC: 
+# LOGIC:
 # This method uses recursion to find all the possible combinations
 
 def matching_parentheses(n):
@@ -37,7 +37,7 @@ def _matching_parentheses(opening, closing, current, combinations=None):
 
     if opening == 0 or closing == 0 or (closing < opening):
         return combinations
-    
+
     opening -= 1
     current += '('
     _matching_parentheses(opening, closing, current, combinations)

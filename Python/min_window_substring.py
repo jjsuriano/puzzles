@@ -4,10 +4,10 @@
 # EXAMPLE:
 # s = "ADOBECODEBANCM", t = "ABC" -> ("BANC", 4)
 
-# INPUT: 
+# INPUT:
 # Two strings s and t
 
-# OUTPUT: 
+# OUTPUT:
 # The minimum window in S that contains all the characters in T and the length of the minimum window
 
 s = "ADOBECODEBANCM"
@@ -16,7 +16,7 @@ print()
 # METHOD 1 - - - - -
 print('METHOD 1')
 
-# LOGIC: 
+# LOGIC:
 # Use brute force by checking all the substrings in s
 
 def minWindowSubstring(s, t):
@@ -32,7 +32,7 @@ def minWindowSubstring(s, t):
     def checker():
       if len(window) < size_t:
         return False
-      for i in t: 
+      for i in t:
         if i not in window:
           return False
       return True
@@ -73,7 +73,7 @@ print()
 # METHOD 2 - - - - -
 print('METHOD 2')
 
-# LOGIC: 
+# LOGIC:
 # Use the sliding window technique to traverse s only once (dynamic window)
 
 def minWindowSubstring(s, t):

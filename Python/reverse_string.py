@@ -5,10 +5,10 @@
 # EXAMPLE:
 # 'Hello World!' -> '!dlroW olleH'
 
-# INPUT: 
+# INPUT:
 # A string
 
-# OUTPUT: 
+# OUTPUT:
 # The input string but reversed
 
 string = 'Hello World!'
@@ -19,8 +19,8 @@ print()
 # METHOD 1 - - - - -
 print('METHOD 1')
 
-# LOGIC: 
-# Use recursion to traverse the string and concatenating the characters 
+# LOGIC:
+# Use recursion to traverse the string and concatenating the characters
 # backwards
 
 def reverse_string(s):
@@ -33,7 +33,7 @@ print()
 # METHOD 2 - - - - -
 print('METHOD 2')
 
-# LOGIC: 
+# LOGIC:
 # Using the idea of two pointers and swapping them until they meet in the middle
 # This method uses a list to swap the charaters
 
@@ -54,7 +54,7 @@ print()
 # METHOD 3 - - - - -
 print('METHOD 3')
 
-# LOGIC: 
+# LOGIC:
 # Using the idea of two pointers and swapping them until they meet in the middle
 # This method uses string slicing and concatenation to swap characters
 

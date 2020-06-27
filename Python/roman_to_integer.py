@@ -1,4 +1,4 @@
-# DESCRIPTION: 
+# DESCRIPTION:
 # Take a string with a Roman numeral and return the integer that corresponds to
 # that Roman numeral.
 
@@ -6,10 +6,10 @@
 # 'III' -> 3
 # 'IV' -> 4
 
-# INPUT: 
+# INPUT:
 # A string representing a Roman numeral
 
-# OUTPUT: 
+# OUTPUT:
 # An integer
 
 roman = 'MCMXCIV'
@@ -19,7 +19,7 @@ print()
 # METHOD 1 - - - - -
 print('METHOD 1')
 
-# LOGIC: 
+# LOGIC:
 # A brute force solution to determine the integer value of Roman numeral.
 
 num = 0
@@ -35,49 +35,48 @@ for i, d in enumerate(roman):
     elif d == 'V':
         if prev_i == 'I':
             num += 3
-        else: 
+        else:
             num += 5
     elif d == 'X':
         if prev_i == 'I':
             num += 8
-        else: 
+        else:
             num += 10
     elif d == 'L':
         if prev_i == 'X':
             num += 30
-        else: 
+        else:
             num += 50
     elif d == 'C':
         if prev_i == 'X':
             num += 80
-        else: 
+        else:
             num += 100
     elif d == 'D':
         if prev_i == 'C':
             num += 300
-        else: 
+        else:
             num += 500
     elif d == 'M':
-    
         if prev_i == 'C':
             num += 800
-        else: 
+        else:
             num += 1000
-    
+
 print(num)
 print()
 
 # METHOD 2 - - - - -
 print('METHOD 2')
 
-# LOGIC: 
+# LOGIC:
 # A solution that refers to a dictionary with valid roman numerals and shortens
 # the original string
 
 ROMAN_TO_DEC = {
-    'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 
-    'X': 10, 'XL': 40, 'L':50, 'XC':90, 
-    'C':100, 'CD': 400, 'D': 500, 'CM': 900, 
+    'I': 1, 'IV': 4, 'V': 5, 'IX': 9,
+    'X': 10, 'XL': 40, 'L':50, 'XC':90,
+    'C':100, 'CD': 400, 'D': 500, 'CM': 900,
     'M': 1000,
 }
 
