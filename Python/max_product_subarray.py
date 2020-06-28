@@ -121,11 +121,11 @@ def maxProduct(nums):
     for i in range(1, size):
         num = nums[i]
 
-        prev_min_product = current_max_product
-        prev_max_product = current_min_product
+        prev_min_product = current_min_product * num
+        prev_max_product = current_max_product * num
 
-        current_min_product = min(prev_min_product * num, prev_max_product * num, num)
-        current_max_product = max(prev_min_product * num, prev_max_product * num, num)
+        current_min_product = min(prev_min_product, prev_max_product, num)
+        current_max_product = max(prev_min_product, prev_max_product, num)
 
         max_product = max(max_product, current_max_product)
 
