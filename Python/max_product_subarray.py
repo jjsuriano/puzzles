@@ -49,7 +49,7 @@ D = [1]
 E = [-2,4,3]
 F = [0,2,2]
 G = [-2,3,-4]
-H = [0,2]
+H = [2,-5,-2,-4,3]
 I = [-3,0,1,-2]
 
 RESULT_A = maxProduct(A)
@@ -69,7 +69,7 @@ CORRECT_D = 1
 CORRECT_E = 12
 CORRECT_F = 4
 CORRECT_G = 24
-CORRECT_H = 2
+CORRECT_H = 24
 CORRECT_I = 1
 
 print("Testing A: ", end="")
@@ -115,15 +115,18 @@ def maxProduct(nums):
         return nums[0]
 
     max_product = nums[0]
-    current_product = nums[0]
     current_max_product = nums[0]
     current_min_product = nums[0]
 
     for i in range(1, size):
         num = nums[i]
-        current_product *= num
-        current_min_product = min(current_min_product * num, current_product, num)
-        current_max_product = max(current_max_product * num, current_product, num)
+
+        prev_min_product = current_max_product
+        prev_max_product = current_min_product
+
+        current_min_product = min(prev_min_product * num, prev_max_product * num, num)
+        current_max_product = max(prev_min_product * num, prev_max_product * num, num)
+
         max_product = max(max_product, current_max_product)
 
     return max_product
