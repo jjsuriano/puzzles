@@ -105,10 +105,28 @@ print()
 print('METHOD 2')
 
 # LOGIC:
-#
+# Using Kadane's algorithm, we keep track of min because of negatives (- * - may be greater than the
+# current value)
 
 def maxProduct(nums):
-    pass
+    size = len(nums)
+
+    if size == 1:
+        return nums[0]
+
+    max_product = nums[0]
+    current_product = nums[0]
+    current_max_product = nums[0]
+    current_min_product = nums[0]
+
+    for i in range(1, size):
+        num = nums[i]
+        current_product *= num
+        current_min_product = min(current_min_product * num, current_product, num)
+        current_max_product = max(current_max_product * num, current_product, num)
+        max_product = max(max_product, current_max_product)
+
+    return max_product
 
 RESULT_A = maxProduct(A)
 RESULT_B = maxProduct(B)
