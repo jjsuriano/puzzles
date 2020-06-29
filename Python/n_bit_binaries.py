@@ -1,30 +1,47 @@
-# DESCRIPTION:
-# Given a number N, print all the binary combinations with N bit.
+"""
+N-bit Binaries.
 
-# EXAMPLE:
-# n = 1 -> "0", "1"
-# n = 2 -> "00", "01", "10", "11"
+Given a number N, print all the binary combinations with N bit.
 
-# INPUT:
-# N, the number of bits the results are going to have
+EXAMPLE:
+n = 1 -> "0", "1"
+n = 2 -> "00", "01", "10", "11"
+"""
 
-# OUTPUT:
-# All the possible bit combinations of N-bits
+print()
 
-# METHOD 1 - - - - -
+# METHOD 1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 print('METHOD 1')
 
-# LOGIC:
-# A solution that uses recursion.
 
 def nBitBinaries(n):
-    _nBitBinaries(n, "")
+    """
+    Print all the binary combinations with n bits.
 
-def _nBitBinaries(n, output):
+    LOGIC:
+    Using recursion
+
+    INPUT:
+    N, the number of bits the results are going to have
+
+    OUTPUT:
+    All the possible bit combinations of N-bits
+    """
+    return _nBitBinaries(n, "")
+
+
+def _nBitBinaries(n, output, result=None):
+    if result is None:
+        result = []
+
     if n == 0:
-        print(output)
-        return ""
+        result.append(output)
+        return result
 
-    return _nBitBinaries(n-1, output+"0") + _nBitBinaries(n-1, output+"1")
+    _nBitBinaries(n-1, output+"0", result)\
+        + _nBitBinaries(n-1, output+"1", result)
 
-nBitBinaries(2)
+    return result
+
+
+print(nBitBinaries(2))
