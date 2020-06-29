@@ -1,26 +1,33 @@
-# DESCRIPTION:
-# Given an integer array nums, find the contiguous subarray within an array
-# (containing at least one number) which has the largest product.
+"""
+Max Product Subarray.
 
-# EXAMPLE:
-# nums = [2,3,-2,4] -> 6
+Given an integer array nums, find the largest product of a subarray whithin an
+array that contains at least one number
 
-# INPUT:
-# A list of integers
-
-# OUTPUT:
-# The max product of a contiguous subarray in nums
+EXAMPLE:
+nums = [2,3,-2,4] -> 6
+"""
 
 print()
 
-# METHOD 1 - - - - -
+# METHOD 1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 print('METHOD 1')
 
-# LOGIC:
-# Brute force approach by going through all the possible sublists in nums and
-# calculating the product
 
-def maxProduct(nums):
+def max_product(nums):
+    """
+    Calculate the maximum product of a contiguous subarray in nums.
+
+    LOGIC:
+    Brute force approach by going through all the possible sublists in nums and
+    calculating the product
+
+    INPUT:
+    A list of integers
+
+    OUTPUT:
+    The max product of a contiguous subarray in nums
+    """
     size = len(nums)
 
     if size == 1:
@@ -41,26 +48,26 @@ def maxProduct(nums):
     return max_product
 
 
+# TEST CASES
+TEST_A = [2, 3, -2, 4]
+TEST_B = [-2, 0, -1]
+TEST_C = [-7, 8, 3, 0, 12, -1]
+TEST_D = [1]
+TEST_E = [-2, 4, 3]
+TEST_F = [0, 2, 2]
+TEST_G = [-2, 3, -4]
+TEST_H = [2, -5, -2, -4, 3]
+TEST_I = [-3, 0, 1, -2]
 
-A = [2,3,-2,4]
-B = [-2,0,-1]
-C = [-7,8,3,0,12,-1]
-D = [1]
-E = [-2,4,3]
-F = [0,2,2]
-G = [-2,3,-4]
-H = [2,-5,-2,-4,3]
-I = [-3,0,1,-2]
-
-RESULT_A = maxProduct(A)
-RESULT_B = maxProduct(B)
-RESULT_C = maxProduct(C)
-RESULT_D = maxProduct(D)
-RESULT_E = maxProduct(E)
-RESULT_F = maxProduct(F)
-RESULT_G = maxProduct(G)
-RESULT_H = maxProduct(H)
-RESULT_I = maxProduct(I)
+RESULT_A = max_product(TEST_A)
+RESULT_B = max_product(TEST_B)
+RESULT_C = max_product(TEST_C)
+RESULT_D = max_product(TEST_D)
+RESULT_E = max_product(TEST_E)
+RESULT_F = max_product(TEST_F)
+RESULT_G = max_product(TEST_G)
+RESULT_H = max_product(TEST_H)
+RESULT_I = max_product(TEST_I)
 
 CORRECT_A = 6
 CORRECT_B = 0
@@ -73,42 +80,61 @@ CORRECT_H = 24
 CORRECT_I = 1
 
 print("Testing A: ", end="")
-print("OK" if RESULT_A == CORRECT_A else "FAIL (" + str(RESULT_A) + " vs " + str(CORRECT_A) + ")")
+print("OK" if RESULT_A == CORRECT_A
+      else "FAIL (" + str(RESULT_A) + " vs " + str(CORRECT_A) + ")")
 
 print("Testing B: ", end="")
-print("OK" if RESULT_B == CORRECT_B else "FAIL (" + str(RESULT_B) + " vs " + str(CORRECT_B) + ")")
+print("OK" if RESULT_B == CORRECT_B
+      else "FAIL (" + str(RESULT_B) + " vs " + str(CORRECT_B) + ")")
 
 print("Testing C: ", end="")
-print("OK" if RESULT_C == CORRECT_C else "FAIL (" + str(RESULT_C) + " vs " + str(CORRECT_C) + ")")
+print("OK" if RESULT_C == CORRECT_C
+      else "FAIL (" + str(RESULT_C) + " vs " + str(CORRECT_C) + ")")
 
 print("Testing D: ", end="")
-print("OK" if RESULT_D == CORRECT_D else "FAIL (" + str(RESULT_D) + " vs " + str(CORRECT_D) + ")")
+print("OK" if RESULT_D == CORRECT_D
+      else "FAIL (" + str(RESULT_D) + " vs " + str(CORRECT_D) + ")")
 
 print("Testing E: ", end="")
-print("OK" if RESULT_E == CORRECT_E else "FAIL (" + str(RESULT_E) + " vs " + str(CORRECT_E) + ")")
+print("OK" if RESULT_E == CORRECT_E
+      else "FAIL (" + str(RESULT_E) + " vs " + str(CORRECT_E) + ")")
 
 print("Testing F: ", end="")
-print("OK" if RESULT_F == CORRECT_F else "FAIL (" + str(RESULT_F) + " vs " + str(CORRECT_F)+ ")")
+print("OK" if RESULT_F == CORRECT_F
+      else "FAIL (" + str(RESULT_F) + " vs " + str(CORRECT_F) + ")")
 
 print("Testing G: ", end="")
-print("OK" if RESULT_G == CORRECT_G else "FAIL (" + str(RESULT_G) + " vs " + str(CORRECT_G) + ")")
+print("OK" if RESULT_G == CORRECT_G
+      else "FAIL (" + str(RESULT_G) + " vs " + str(CORRECT_G) + ")")
 
 print("Testing H: ", end="")
-print("OK" if RESULT_H == CORRECT_H else "FAIL (" + str(RESULT_H) + " vs " + str(CORRECT_H) + ")")
+print("OK" if RESULT_H == CORRECT_H
+      else "FAIL (" + str(RESULT_H) + " vs " + str(CORRECT_H) + ")")
 
 print("Testing I: ", end="")
-print("OK" if RESULT_I == CORRECT_I else "FAIL (" + str(RESULT_I) + " vs " + str(CORRECT_I) + ")")
+print("OK" if RESULT_I == CORRECT_I
+      else "FAIL (" + str(RESULT_I) + " vs " + str(CORRECT_I) + ")")
 
 print()
 
-# METHOD 2 - - - - -
+# METHOD 2 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 print('METHOD 2')
 
-# LOGIC:
-# Using Kadane's algorithm, we keep track of min because of negatives (- * - may be greater than the
-# current value)
 
-def maxProduct(nums):
+def max_product(nums):
+    """
+    Calculate the maximum product of a contiguous subarray in nums.
+
+    LOGIC:
+    Using Kadane's algorithm, we keep track of min because of negatives (- * -
+    may be greater than the current value)
+
+    INPUT:
+    A list of integers
+
+    OUTPUT:
+    The max product of a contiguous subarray in nums
+    """
     size = len(nums)
 
     if size == 1:
@@ -131,41 +157,52 @@ def maxProduct(nums):
 
     return max_product
 
-RESULT_A = maxProduct(A)
-RESULT_B = maxProduct(B)
-RESULT_C = maxProduct(C)
-RESULT_D = maxProduct(D)
-RESULT_E = maxProduct(E)
-RESULT_F = maxProduct(F)
-RESULT_G = maxProduct(G)
-RESULT_H = maxProduct(H)
-RESULT_I = maxProduct(I)
+
+# TEST CASES
+RESULT_A = max_product(TEST_A)
+RESULT_B = max_product(TEST_B)
+RESULT_C = max_product(TEST_C)
+RESULT_D = max_product(TEST_D)
+RESULT_E = max_product(TEST_E)
+RESULT_F = max_product(TEST_F)
+RESULT_G = max_product(TEST_G)
+RESULT_H = max_product(TEST_H)
+RESULT_I = max_product(TEST_I)
 
 print("Testing A: ", end="")
-print("OK" if RESULT_A == CORRECT_A else "FAIL (" + str(RESULT_A) + " vs " + str(CORRECT_A) + ")")
+print("OK" if RESULT_A == CORRECT_A
+      else "FAIL (" + str(RESULT_A) + " vs " + str(CORRECT_A) + ")")
 
 print("Testing B: ", end="")
-print("OK" if RESULT_B == CORRECT_B else "FAIL (" + str(RESULT_B) + " vs " + str(CORRECT_B) + ")")
+print("OK" if RESULT_B == CORRECT_B
+      else "FAIL (" + str(RESULT_B) + " vs " + str(CORRECT_B) + ")")
 
 print("Testing C: ", end="")
-print("OK" if RESULT_C == CORRECT_C else "FAIL (" + str(RESULT_C) + " vs " + str(CORRECT_C) + ")")
+print("OK" if RESULT_C == CORRECT_C
+      else "FAIL (" + str(RESULT_C) + " vs " + str(CORRECT_C) + ")")
 
 print("Testing D: ", end="")
-print("OK" if RESULT_D == CORRECT_D else "FAIL (" + str(RESULT_D) + " vs " + str(CORRECT_D) + ")")
+print("OK" if RESULT_D == CORRECT_D
+      else "FAIL (" + str(RESULT_D) + " vs " + str(CORRECT_D) + ")")
 
 print("Testing E: ", end="")
-print("OK" if RESULT_E == CORRECT_E else "FAIL (" + str(RESULT_E) + " vs " + str(CORRECT_E) + ")")
+print("OK" if RESULT_E == CORRECT_E
+      else "FAIL (" + str(RESULT_E) + " vs " + str(CORRECT_E) + ")")
 
 print("Testing F: ", end="")
-print("OK" if RESULT_F == CORRECT_F else "FAIL (" + str(RESULT_F) + " vs " + str(CORRECT_F)+ ")")
+print("OK" if RESULT_F == CORRECT_F
+      else "FAIL (" + str(RESULT_F) + " vs " + str(CORRECT_F) + ")")
 
 print("Testing G: ", end="")
-print("OK" if RESULT_G == CORRECT_G else "FAIL (" + str(RESULT_G) + " vs " + str(CORRECT_G) + ")")
+print("OK" if RESULT_G == CORRECT_G
+      else "FAIL (" + str(RESULT_G) + " vs " + str(CORRECT_G) + ")")
 
 print("Testing H: ", end="")
-print("OK" if RESULT_H == CORRECT_H else "FAIL (" + str(RESULT_H) + " vs " + str(CORRECT_H) + ")")
+print("OK" if RESULT_H == CORRECT_H
+      else "FAIL (" + str(RESULT_H) + " vs " + str(CORRECT_H) + ")")
 
 print("Testing I: ", end="")
-print("OK" if RESULT_I == CORRECT_I else "FAIL (" + str(RESULT_I) + " vs " + str(CORRECT_I) + ")")
+print("OK" if RESULT_I == CORRECT_I
+      else "FAIL (" + str(RESULT_I) + " vs " + str(CORRECT_I) + ")")
 
 print()
