@@ -46,6 +46,7 @@ def max_sum(nums):
     return max_sum
 
 
+# TEST CASES
 TEST_A = [2, 3, -2, 4]
 TEST_B = [-2, 0, -1]
 TEST_C = [-7, 8, 3, 0, 12, -1]
@@ -150,6 +151,7 @@ def max_sum(nums):
     return result
 
 
+# TEST CASES
 RESULT_A = max_sum(TEST_A)
 RESULT_B = max_sum(TEST_B)
 RESULT_C = max_sum(TEST_C)

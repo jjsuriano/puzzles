@@ -29,6 +29,7 @@ def trapped_water_area(elevation):
     pass
 
 
+# TEST CASES
 TEST_A = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 
 RESULT_A = trapped_water_area(TEST_A)
