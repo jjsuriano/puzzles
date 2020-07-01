@@ -41,14 +41,17 @@ def min_window_substring(s, t):
     def checker():
         if len(window) < size_t:
             return False
+
         for i in t:
             if i not in window:
                 return False
+
         return True
 
     for i in range(size_s + 1):
         for j in range(i + 1, size_s + 1):
             window = s[i:j]
+
             if checker():
                 if not result or len(result) > j-i:
                     result = window
@@ -132,15 +135,18 @@ def min_window_substring(s, t):
         for i, v in char_set.items():
             if window[i] < v:
                 return False
+
         return True
 
     while right < size_s:
         current_char = s[right]
         window[current_char] += 1
         right += 1
+
         while checker():
-            if not result or len(result) > right-left:
+            if not result or len(result) > right - left:
                 result = s[left:right]
+
             window[s[left]] -= 1
             left += 1
 
@@ -181,6 +187,7 @@ TEST_BA = "AA"
 RESULT_BA = min_window_substring(TEST_B, TEST_BA)
 
 CORRECT_BA = ("AA", 2)
+
 print("Testing BA: ", end="")
 print("OK" if RESULT_BA == CORRECT_BA
       else "FAIL (" + str(RESULT_BA) + " vs " + str(CORRECT_BA) + ")")

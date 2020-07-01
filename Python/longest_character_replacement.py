@@ -134,8 +134,8 @@ print("OK" if RESULT_CB == CORRECT_CB
 
 print()
 
-# METHOD 1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-print('METHOD 1')
+# METHOD 1b - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+print('METHOD 1b')
 
 
 def character_replacement(s, k):

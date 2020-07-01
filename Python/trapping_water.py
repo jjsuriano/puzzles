@@ -27,6 +27,7 @@ def trapped_water_area(elevation):
     An integer of the area of the trapped water by the elevations
     """
     pass
+    # TODO
 
 
 # TEST CASES
